@@ -1,17 +1,26 @@
-* {
-	border: 1px solid red;
+body {
+	margin: 0;
 }
 
 .tictactoe {
 	display: flex;
 	justify-content: center;
-	padding: 100px;
-	height: 80vh;
+	align-items: center;
+	height: 100vh;
 }
 
 .container {
 	display: grid;
+	border: 2px solid black;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
-	width: 100vh;
+	height: 150px;
+	width: 150px;
+}
+
+.square {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
 }

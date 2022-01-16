@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 (function(){
 
     const container = document.querySelector(".container")
@@ -14,7 +14,14 @@
 
 })()
 
-let game = (() => {
+const player = (name, marker) => {
+    return { name, marker }
+}
+
+const one = player("raihan", "x")
+const two = player("irfan", "o")
+
+let game = ((playerOne, playerTwo) => {
 
     let _gameBoard = ["", "", "", "", "", "", "", "", ""]
     let _winningState = [
@@ -27,13 +34,14 @@ let game = (() => {
         [0, 4, 8],
         [2, 4, 6]
     ]
-    let currentState = "x" ? "x" : "o"
+
+    let _currentState = playerOne
 
     function setBoard (where) { 
-        _gameBoard[where] = currentState
+        _gameBoard[where] = _currentState.marker
 
         const dataDom = document.querySelector(`[data="${where}"]`)
-        dataDom.textContent = currentState
+        dataDom.textContent = _currentState.marker
 
         checkWin()
         switchState()
@@ -42,18 +50,18 @@ let game = (() => {
     function checkWin () {
         for (let i = 0; i < _winningState.length; i++) {
             const array = _winningState[i]
-            if(_gameBoard[array[0]] === currentState &&
-               _gameBoard[array[1]] === currentState &&
-               _gameBoard[array[2]] === currentState) {
-                   console.log("match!")
+            if(_gameBoard[array[0]] === _currentState.marker &&
+               _gameBoard[array[1]] === _currentState.marker &&
+               _gameBoard[array[2]] === _currentState.marker ) {
+                   alert(`${_currentState.name} wins`)
                }
         }
     }
 
     function switchState () {
-        currentState = !currentState
+        _currentState = _currentState === playerOne ? playerTwo : playerOne
     }
+    
+    return { setBoard } 
 
-    return { currentState, setBoard } 
-
-})()
+})(one, two)
