@@ -1,0 +1,17 @@
+* {
+	border: 1px solid red;
+}
+
+.tictactoe {
+	display: flex;
+	justify-content: center;
+	padding: 100px;
+	height: 80vh;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	width: 100vh;
+}
