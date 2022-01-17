@@ -38,7 +38,6 @@ const game = (() => {
             div.setAttribute("data", i)
             div.addEventListener("click", () => {
                 _setBoard(i)
-                console.log("test")
             }, {once: true})
             _container.appendChild(div);
         }
@@ -92,7 +91,6 @@ const game = (() => {
 
     function _endGame() {
         _results.textContent = `${_currentState.name} wins`
-        console.log(_gameBoard)
         _hide()
     }
 
@@ -123,7 +121,6 @@ const game = (() => {
             _forms.style.display = "flex"
             _container.innerHTML = ""
             _restart.style.display = "none"
-            console.log(_gameBoard)
         })
     }
     
