@@ -30,9 +30,7 @@ const game = (() => {
     const _restart = document.querySelector(".restart")
     const _start = document.querySelector("#startBtn")
 
-    function initGame(){
-
-        _getPlayer()
+    function _initGame(){
 
         for(let i = 0; i < 9; i++){
             const div = document.createElement('div');
@@ -40,11 +38,10 @@ const game = (() => {
             div.setAttribute("data", i)
             div.addEventListener("click", () => {
                 _setBoard(i)
+                console.log("test")
             }, {once: true})
             _container.appendChild(div);
-        console.log("halo")
         }
-
 
     }
 
@@ -68,6 +65,8 @@ const game = (() => {
             playerOne = player(nameOne, markerOne)
             playerTwo = player(nameTwo, markerTwo)
             _currentState = playerOne
+            _forms.style.display = "none"
+            _initGame()
         }else{
             alert("please fill all the forms")
         }
@@ -93,6 +92,7 @@ const game = (() => {
 
     function _endGame() {
         _results.textContent = `${_currentState.name} wins`
+        console.log(_gameBoard)
         _hide()
     }
 
@@ -107,32 +107,28 @@ const game = (() => {
         _restart.style.display = "block"
     }
 
-    function _replay() {
-        _gameBoard = []
-        _container.style.display = "block"
-        _results.textContent = "Tic Tac Toe"
-        _turns.style.display = "none"
-        _forms.style.display = "flex"
-    }
-
-    function start() {
+    function startGame() {
         _start.addEventListener("click", () => {
-            initGame()
-            _forms.style.display = "none"
+            _getPlayer()
+            _restartGame()
         })
     }
 
-    function restart() {
+    function _restartGame() {
         _restart.addEventListener("click", () => {
-            _replay()
+            _gameBoard = ["", "", "", "", "", "", "", "", ""]
+            _container.style.display = "grid"
+            _results.textContent = "Tic Tac Toe"
+            _turns.style.display = "none"
+            _forms.style.display = "flex"
             _container.innerHTML = ""
             _restart.style.display = "none"
+            console.log(_gameBoard)
         })
     }
     
-    return { start, restart} 
+    return { startGame } 
 
 })()
 
-game.start()
-game.restart()
+game.startGame()
