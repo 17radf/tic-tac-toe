@@ -1,5 +1,6 @@
 body {
 	margin: 0;
+	font-family: "Courier New", Courier, monospace;
 }
 
 .tictactoe {
@@ -25,4 +26,24 @@ body {
 	justify-content: center;
 	align-items: center;
 	font-weight: bold;
+}
+
+input {
+	width: 100px;
+}
+
+button {
+	width: 200px;
+}
+
+.forms {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.marker {
+	width: 20px;
 }

@@ -9,10 +9,35 @@
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
+
     <div class="tictactoe">
+
         <div class="results">Tic Tac Toe</div>
+        <div class="forms">
+            <div>
+                <label for="playerOne">Player 1</label>
+                <input type="text" name="" id="oneName" placeholder="Name">
+                <label for="playerOne">Marker: </label>
+                <input type="text" name="" id="oneMarker" class="marker">
+            </div>
+            <div>
+                <label for="playerTwo">Player 2</label>
+                <input type="text" name="" id="twoName" placeholder="Name">
+                <label for="playerTwo">Marker: </label>
+                <input type="text" name="" id="twoMarker" class="marker">
+            </div>
+            <br>
+            <button id="startBtn">Start</button>
+        </div>
+
         <div class="container"></div>
         <div class="turns"></div>
+        <div class="restart" style="display: none;">
+            <button id="restartBtn">Restart</button>
+        </div>
+
+
     </div>
+
 </body>
 </html>
