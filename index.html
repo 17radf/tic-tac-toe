@@ -6,25 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <script src="scripts/script.js" defer></script>
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 
     <div class="tictactoe">
 
-        <div class="results">Tic Tac Toe</div>
+        <h1 class="results">Tic Tac Toe</h1>
         <div class="forms">
             <div>
                 <label for="playerOne">Player 1</label>
-                <input type="text" name="" id="oneName" placeholder="Name">
+                <input type="text" name="" id="oneName" placeholder="Name" maxlength="12">
                 <label for="playerOne">Marker: </label>
-                <input type="text" name="" id="oneMarker" class="marker">
+                <input type="text" name="" id="oneMarker" class="marker" maxlength="1">
             </div>
             <div>
                 <label for="playerTwo">Player 2</label>
-                <input type="text" name="" id="twoName" placeholder="Name">
+                <input type="text" name="" id="twoName" placeholder="Name" maxlength="12">
                 <label for="playerTwo">Marker: </label>
-                <input type="text" name="" id="twoMarker" class="marker">
+                <input type="text" name="" id="twoMarker" class="marker" maxlength="1">
             </div>
             <br>
             <button id="startBtn">Start</button>
@@ -35,7 +35,6 @@
         <div class="restart" style="display: none;">
             <button id="restartBtn">Restart</button>
         </div>
-
 
     </div>
 

@@ -30,7 +30,7 @@ const game = (() => {
     const _restart = document.querySelector(".restart")
     const _start = document.querySelector("#startBtn")
 
-    function _initGame(){
+    function _initBoard(){
 
         for(let i = 0; i < 9; i++){
             const div = document.createElement('div');
@@ -54,7 +54,7 @@ const game = (() => {
         _switchState()
     }
 
-    function _getPlayer() {
+    function _initGame() {
         const nameOne = document.querySelector("#oneName").value
         const markerOne = document.querySelector("#oneMarker").value
         const nameTwo = document.querySelector("#twoName").value
@@ -65,7 +65,7 @@ const game = (() => {
             playerTwo = player(nameTwo, markerTwo)
             _currentState = playerOne
             _forms.style.display = "none"
-            _initGame()
+            _initBoard()
         }else{
             alert("please fill all the forms")
         }
@@ -107,7 +107,7 @@ const game = (() => {
 
     function startGame() {
         _start.addEventListener("click", () => {
-            _getPlayer()
+            _initGame()
             _restartGame()
         })
     }
